@@ -1,0 +1,39 @@
+p {
+	position: relative;
+	max-width: 40em;	
+	background-color: #F8F0DF;
+	padding: 0.5em 1em;
+	margin: 0;
+	font-size: 0.9em;
+	border-radius: 0rem 1.2rem 1.2rem 1.2rem;
+    box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
+}
+
+.name {
+	margin: 0;
+	font-size: 1.45em;
+	color: #FDFDF6;
+}
+
+img.avatar {
+    margin: 0;
+	height: 6em;
+	width: 6em;
+}
+
+
+
+html {
+	font-family: 'JetBrains Mono', monospace;
+	line-height: 1.5;
+	font-weight: 600;
+	color: #494949;
+	background: linear-gradient(rgba(99, 99, 99, 0.7), rgba(80, 80, 80, 0.7)), rgb(116, 83, 83);
+}
+
+html, body {
+	height: 100%;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}

@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  font-family: 'Open Sans', 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: rgba(10, 14, 14, 0.95);
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
