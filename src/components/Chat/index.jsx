@@ -132,7 +132,7 @@ export const Chat = (props) => {
                                 </div>
                                 <div className='message-context-item'>
                                     <span>{(message || sticker) ?? 'unknown message'}</span>
-                                    <small>{dateFormat(Date.now(), 'HH:MM')}</small>
+                                    <small>{dateFormat(timestamp, 'HH:MM')}</small>
                                 </div>
                             </div>
                         </div>
