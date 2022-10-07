@@ -1,0 +1,216 @@
+.chat {
+    background: rgba(10, 14, 14, 0.95);
+    max-width: 100%;
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    margin: 25px auto;
+    box-sizing: border-box;
+    padding: 1em;
+    border-radius: 0;
+    border: 1px solid #161a1a;
+    position: relative;
+    overflow: hidden;
+}
+
+.chat-container {
+    height: calc(100% - 55px);
+    overflow: scroll;
+}
+
+.chat-container > .message-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.chat-container > .message-container:not(:last-child) {
+    margin: 0 0 2em 0;
+}
+
+.message-container .message-person {
+    text-align: center;
+    margin: 0 1.2em 0 0;
+}
+
+.message-container .message-person .message-avatar {
+    height: 35px;
+    width: 35px;
+    border: 1px solid #171a1a;
+    overflow: hidden;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: relative;
+}
+
+.message-container .message-person .message-avatar img {
+    height: 100%;
+    width: auto;
+}
+
+.message-container .message-context {
+    width: 100%;
+    align-self: flex-end;
+}
+
+.message-container .message-context .message-author {
+    width: fit-content;
+    display: inline-flex;
+    color: #bfbfbf;
+    margin-bottom: 8px;
+    text-shadow: 1px 1px 4px #22955f;
+}
+
+.message-container .message-context .message-context-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.message-container .message-context .message-context-item:not(:last-child) {
+    margin: 0 0 0.3em;
+}
+
+.message-container .message-context .message-context-item > small {
+    margin-right: 10px;
+    color: #2e5753;
+}
+
+.message-container .message-context .message-context-item > span {
+    width: -moz-fit-content;
+    width: fit-content;
+    display: inline-table;
+    word-wrap: break-word;
+    background: linear-gradient(to bottom right, #2575bb, #009951);
+    font-size: 14px;
+    color: #f0f0f0;
+    padding: 0.5em 0.8em;
+    line-height: 1.5;
+    border-radius: 6px;
+    font-family: 'Open Sans', 'Roboto', sans-serif;
+}
+
+.chat::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(https://media.discordapp.net/attachments/1024085586723754104/1025135365180362782/tower-of-fantasy-download.jpg?width=1193&height=671) fixed no-repeat center center;
+    background-size: cover;
+    z-index: -1;
+}
+
+.chat .typing-panel {
+    position: relative;
+    background: #131719a6;
+    border-radius: 12px;
+    padding: 0 1em;
+    height: 55px;
+}
+
+.chat .typing-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+}
+
+.chat .typing-container input {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    position: relative;
+    color: #a3a3a3;
+    font-size: 14px;
+    background: transparent;
+    border: 0;
+    resize: none;
+}
+
+.chat .typing-container button.send-message,
+.chat .typing-container button.settings-message,
+.chat .typing-container button.stickers-message,
+.chat .typing-container button.lockend-message {
+    position: relative;
+    height: 20px;
+    width: 30px;
+    border: 0;
+    padding: 0;
+    outline: none;
+    cursor: pointer;
+    background: #192122;
+    height: 30px;
+    min-width: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease;
+}
+
+.chat .typing-container button.settings-message,
+.chat .typing-container button.stickers-message,
+.chat .typing-container button.lockend-message {
+    margin: 0 1em 0 0;
+    background: transparent;
+}
+
+.chat .typing-container button.send-message:active,
+.chat .typing-container button.settings-message:active,
+.chat .typing-container button.stickers-message:active,
+.chat .typing-container button.lockend-message:active {
+    transform: scale(0.82);
+}
+
+.chat .typing-container button.send-message > svg,
+.chat .typing-container button.settings-message > svg,
+.chat .typing-container button.stickers-message > svg,
+.chat .typing-container button.lockend-message > svg {
+    stroke: #FFF;
+    fill: #FFF;
+    width: 65%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.chat .typing-container button.send-message > svg {
+    width: 50%;
+    margin: 1px -1px;
+}
+
+.chat .typing-container button.settings-message > svg,
+.chat .typing-container button.stickers-message > svg,
+.chat .typing-container button.lockend-message > svg {
+    stroke: #a4a4a4;
+}
+
+.chat-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.chat-container::-webkit-scrollbar {
+    display: none;
+}
+
+.chat .typing-container .symbols-input-length {
+    position: absolute;
+    top: -24px;
+    right: 5px;
+    color: #4f4f4f;
+}
+
+.control-panel-message {
+    display: inline-flex;
+}
