@@ -39,6 +39,7 @@ export const TypingPanel = (props) => {
     const onSendMessageHandler = () => {
         if(connectedSocket && inputMessage.length) {
             socket.send(JSON.stringify({
+                type: "SEND_MESSAGE",
                 text: inputMessage,
                 avatar: 'Avatar56',
                 bubble: 47,
