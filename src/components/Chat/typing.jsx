@@ -11,7 +11,7 @@ import { ReactComponent as SendMessageSvg } from '../../assets/svg/sendMessage.s
 
 export const TypingPanel = (props) => {
     const { autoScrollEndRef, socket, connectedSocket, isLoaded } = props
-    const { MAX_LIMIT_SYMBOLS_MESSAGE } = GAME_RESOURCES
+    const { MAX_LIMIT_SYMBOLS_MESSAGE } = 170
 
     const [inputMessage, setInputMessage] = useState('')
     const [lockEndMessage, setLockEndMessage] = useState(true)
