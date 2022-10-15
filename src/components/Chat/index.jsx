@@ -22,7 +22,7 @@ export const Chat = (props) => {
         if(connectedSocket && !fetchHistoryRef.current) {
             fetchHistoryRef.current = true
             
-            fetch(`${process.env.REACT_APP_HOST}/update`)
+            fetch(`${process.env.REACT_APP_HOST}/api/update`)
                 .then(res => res.json())
                 .then(data => {
                     const history = data?.items ?? []
