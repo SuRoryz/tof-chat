@@ -7,11 +7,12 @@ import AddReactionOutlinedIcon from '@mui/icons-material/AddReactionOutlined'
 
 import { Drawer } from '../Drawer'
 import { GAME_RESOURCES } from '../../utils'
+import { SOCKET_EVENTS } from '../../utils/constants'
 import { ReactComponent as SendMessageSvg } from '../../assets/svg/sendMessage.svg'
 
 export const TypingPanel = (props) => {
     const { autoScrollEndRef, socket, connectedSocket, isLoaded } = props
-    const { MAX_LIMIT_SYMBOLS_MESSAGE } = 170
+    const { MAX_LIMIT_SYMBOLS_MESSAGE } = GAME_RESOURCES
 
     const [inputMessage, setInputMessage] = useState('')
     const [lockEndMessage, setLockEndMessage] = useState(true)
@@ -39,17 +40,18 @@ export const TypingPanel = (props) => {
     const onSendMessageHandler = () => {
         if(connectedSocket && inputMessage.length) {
             socket.send(JSON.stringify({
-                type: "SEND_MESSAGE",
+                type: SOCKET_EVENTS.SEND_MESSAGE,
                 text: inputMessage,
                 avatar: 'Avatar56',
                 bubble: 47,
                 frame: 47,
-                level: 0,
-                nickname: 'Silvercoast Lab',
+                level: 95,
+                nickname: 'Tower of Fantasy',
                 sex: 1,
                 suppressors: '1_3',
                 title: '1_1_6_1'
             }))
+
             setInputMessage('')
         }
     }
@@ -85,8 +87,8 @@ export const TypingPanel = (props) => {
 
     return (
         <div className='typing-panel'>
-            {SettingsDrawer}
-            {StickersDrawer}
+            {/* {SettingsDrawer}
+            {StickersDrawer} */}
             <div className='typing-container'>
                 {((!inputMessage.length && isMobile) || !isMobile) && (
                     <>

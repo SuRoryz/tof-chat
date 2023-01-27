@@ -1,3 +1,5 @@
+import { SOCKET_TYPES } from './constants'
+
 const Parser = require('parse5').Parser
 
 export const unicodeToChar = (text) => text.replace(/\u[\dA-F]{4}/gi, (match) => String.fromCharCode(parseInt(match.replace(/\u/g, ''), 16)))
@@ -34,11 +36,6 @@ export const htmlParseByMessages = (messages) => {
             return x
         }
     })
-}
-
-export const SOCKET_TYPES = {
-    PING: 'PING',
-    WORLD_CHAT: 'WORLD_CHAT',
 }
 
 export const GAME_RESOURCES = {
@@ -79,6 +76,11 @@ export const GAME_RESOURCES = {
         Cocoritter: '',
         KING: '',
         Zero: '',
+        Alyss: '',
+        Umi: '',
+        Fenrir: '',
+        Cobalt_B: '',
+        Ruby: '',
         Tsubasa: '',
         Crow: '',
         Ene: '',
@@ -155,11 +157,11 @@ export const GAME_RESOURCES = {
         '1.5': '1_5',   '4.4': '4_4',   '7.3': '7_3',
         '2.1': '2_1',   '4.5': '4_5',   '7.4': '7_4',
         '2.2': '2_2',   '5.1': '5_1',   '7.5': '7_5',
-        '2.3': '2_3',   '5.2': '5_2',
-        '2.4': '2_4',   '5.3': '5_3',
-        '2.5': '2_5',   '5.4': '5_4',
-        '3.1': '3_1',   '5.5': '5_5',
-        '3.2': '3_2',   '6.1': '6_1',
+        '2.3': '2_3',   '5.2': '5_2',   '8.1': '8_1',
+        '2.4': '2_4',   '5.3': '5_3',   '8.2': '8_2',
+        '2.5': '2_5',   '5.4': '5_4',   '8.3': '8_3',
+        '3.1': '3_1',   '5.5': '5_5',   '8.4': '8_4',
+        '3.2': '3_2',   '6.1': '6_1',   '8.5': '8_5',
         '3.3': '3_3',   '6.2': '6_2',
     },
     sex: {

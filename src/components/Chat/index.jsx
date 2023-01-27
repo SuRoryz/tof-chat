@@ -6,9 +6,11 @@ import Typography from '@mui/material/Typography'
 
 import './chat.css'
 import './chat.mobile.css'
-import { htmlParseByMessages, filterDublicateMessagesByHashId, SOCKET_TYPES } from '../../utils'
+import { htmlParseByMessages, filterDublicateMessagesByHashId } from '../../utils'
 import { Linear } from '../Linear'
 import { TypingPanel } from './typing'
+import { ServiceApi } from '../../api'
+import { SOCKET_TYPES } from '../../utils/constants'
 
 export const Chat = (props) => {
     const { socket, connectedSocket, countReconnectSocket } = props
@@ -22,9 +24,8 @@ export const Chat = (props) => {
         if(connectedSocket && !fetchHistoryRef.current) {
             fetchHistoryRef.current = true
             
-            fetch(`${process.env.REACT_APP_HOST}/api/update`)
-                .then(res => res.json())
-                .then(data => {
+            ServiceApi.getChatHistory()
+                .then((data) => {
                     const history = data?.items ?? []
 
                     setMessages(htmlParseByMessages([
@@ -44,9 +45,9 @@ export const Chat = (props) => {
         } catch (e) {
             console.warn(e)
             d = JSON.parse(JSON.parse(data))
-        } finally {
-            return d
         }
+
+        return d
     }
       
     useEffect(() => {

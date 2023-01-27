@@ -9,12 +9,8 @@
   },
   "contributors": [
     {
-      "name": "yandexphp",
+      "name": "yandexphp (クシススミタ)",
       "url": "https://github.com/yandexphp"
-    },
-    {
-      "name": "ethxrnity",
-      "url": "https://github.com/ethxrnity"
     }
   ],
   "dependencies": {
